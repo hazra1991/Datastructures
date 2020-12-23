@@ -49,26 +49,31 @@ class Deque:
 
     def popleft(self):
         if self.fstnode:
-            val = self.fstnode.value
-            self.fstnode = self.fstnode.next
-            if self.fstnode:
-                self.fstnode.prev = None
-        else:
-            raise ValueError('Empty object')
-        self.__len -=1
-        return val
+            temp = self.fstnode.value
+            nextnode = self.fstnode.next
+            if nextnode:
+                nextnode.prev  = None
+                self.fstnode.next = None
+                self.fstnode = nextnode
+            else:
+                self.lastnode = self.fstnode = None
+            self.__len -=1
+            return temp
+        raise ValueError("Queue Empty")
     
     def popright(self):
         if self.lastnode:
-            val = self.lastnode.value
-            self.lastnode =  self.lastnode.prev
-            if self.lastnode:
-                self.lastnode.next =  None
-
-        else:
-            raise ValueError('empty queue')
-        self.__len -=1
-        return val
+            temp = self.lastnode.value
+            prevnode = self.lastnode.prev
+            if prevnode:
+                prevnode.next  = None
+                self.lastnode.prev = None
+                self.lastnode = prevnode
+            else:
+                self.lastnode = self.fstnode = None
+            self.__len -=1
+            return temp
+        raise ValueError("Queue Empty")
     
     def reverse(self):
         pass
@@ -98,6 +103,6 @@ o.appendleft('sixth')
 o.append(123)
 print(o)
 print(o.popleft())
-print(o.popleft())
+print(o.popright())
 print(o)
 print(len(o))
