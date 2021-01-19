@@ -1,7 +1,14 @@
-Binary tree are DS which has two nodes (right and left) which points to other nodes and so on .
+Binary Tree:--
 
-We can use recaursion or stacking or Queueing or threading to traverse or insert elements to the tree.
+    Binary tree are DS which has two nodes (right and left) which points to other nodes and so on .
+    We can use recaursion or stacking or Queueing or threading to traverse or insert elements to the tree.
+ * Types of binary tree:
+   ~~~~~~~~~~~~~~~~~~~~~~
+    1)
+    2)
 
+ * Tree Traversal algorithim
+   ~~~~~~~~~~~~~~~~~~~~~~~~   
 BFS:
 level order traversal
 
@@ -12,5 +19,3 @@ postorder traversal
 inverse a binary tree
 -----------
 DFS and BFS  for graphs
-
-BST
